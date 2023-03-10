@@ -4,4 +4,5 @@
 ## Notes: All-In-One bag addon for all your characters
 ## Author: Cedridan
 
-Core.lua
+config.lua
+init.lua
