@@ -12,10 +12,21 @@ function Config:Toggle()
     frame:SetShown(not frame:IsShown())
 end
 
--- Creates parent frame for bag interface; sets default size and position on screen
+-- Creattes button widgets associated with main frame
+function Config:CreateButton(point, relativeFrame, relativePoint, yOffset, text)
+    local button = CreateFrame("Button", nil, mainFrame, "GameMenuButtonTemplate")
+    button:SetPoint(point, relativeFrame, relativePoint, 0, yOffset)
+    button:SetSize(80,40)
+    button:SetText(text)
+    button:SetNormalFontObject("GameFontNormalLarge")
+    button:SetHighlightFontObject("GameFontHighlightLarge")
+    return button
+end
+
+-- Creates parent frame for main interface; sets default size and position on screen
 function Config:CreateMainFrame()
     mainFrame = CreateFrame("Frame", "MainFrameConfig", UIParent, "BasicFrameTemplateWithInset")
-    mainFrame:SetSize(600, 420)
+    mainFrame:SetSize(400, 400)
     mainFrame:SetPoint("CENTER", UIParent, "CENTER")
 
     -- Title Frame
@@ -23,6 +34,13 @@ function Config:CreateMainFrame()
     mainFrame.title:SetPoint("LEFT", mainFrame.TitleBg, "LEFT", 5, 0)
     mainFrame.title:SetText(UnitName("player") .. "'s Notes")
 
-    -- bagFrame:Hide()
+    -- Button widgets attached to main frame --
+    ---- New Button ----
+    mainFrame.newButton = self:CreateButton("CENTER", mainFrame, "BOTTOM", 85, "New")
+
+    ---- Delete Button ----
+    mainFrame.delButton = self:CreateButton("CENTER", mainFrame, "BOTTOM", 40, "Delete")
+
+    mainFrame:Hide()
     return mainFrame
 end
