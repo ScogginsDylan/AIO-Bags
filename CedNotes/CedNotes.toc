@@ -1,7 +1,7 @@
 ## Interface: 100005
 ## Version: 0.0.1a
-## Title: AIO Bags
-## Notes: All-In-One bag addon for all your characters
+## Title: CedNotes
+## Notes: Addon for taking notes
 ## Author: Cedridan
 
 config.lua
