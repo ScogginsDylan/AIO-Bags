@@ -22,7 +22,7 @@ function core:init(event, name)
     end
 
     SLASH_CEDNOTES1 = "/cn"
-    SlashCmdList.CEDNOTES = function()
+    SlashCmdList.CEDNOTES = core.Config.Toggle
         
 end
 
