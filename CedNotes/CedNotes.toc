@@ -1,7 +1,7 @@
 ## Interface: 100005
 ## Version: 0.0.1a
 ## Title: CedNotes
-## Notes: Addon for taking notes
+## Notes: For all your not taking needs!
 ## Author: Cedridan
 
 config.lua
